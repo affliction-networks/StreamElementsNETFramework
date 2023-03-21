@@ -58,12 +58,17 @@
     <Compile Include="Models\ChatStats.cs" />
     <Compile Include="Models\ChatStatsSettings.cs" />
     <Compile Include="Models\Loyalties.cs" />
+    <Compile Include="Models\Donation.cs" />
+    <Compile Include="Models\DonationUser.cs" />
+    <Compile Include="Models\TipDocs.cs" />
+    <Compile Include="Models\Tips.cs" />
     <Compile Include="Models\Loyalty.cs" />
     <Compile Include="Models\Result.cs" />
     <Compile Include="Models\Results\BotCommandResult.cs" />
     <Compile Include="Models\Results\BotTimerResult.cs" />
     <Compile Include="Models\Results\ChatStatsSettingsResult.cs" />
     <Compile Include="Models\Results\IStreamElementsResult.cs" />
+    <Compile Include="Models\Results\TipResults.cs" />
     <Compile Include="Models\Results\LoyaltyResult.cs" />
     <Compile Include="Models\SubmitBotLevelReponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

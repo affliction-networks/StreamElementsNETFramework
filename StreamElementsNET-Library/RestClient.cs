@@ -32,17 +32,17 @@ namespace StreamElements.Net
             }
             return Client.GetChatStats(channel);
         }
-        public Task<Models.Results.LoyaltyResult> GetLoyalty(string channel)
+        public Task<Tips> GetTips(string channel)
         {
             if(string.IsNullOrWhiteSpace(channel))
             {
                 throw new ArgumentNullException(nameof(channel));
             }
-            return this.Client.GetLoyalties(channel);
+            return this.Client.GetTips(channel);
         }
         public virtual T BuildHttpClient<T>(string pathSegment = null)
         {
-            var builder = new UriBuilder("https://api.streamelements.com/kappa/v1");
+            var builder = new UriBuilder("https://api.streamelements.com/kappa/v2");
             if(!string.IsNullOrEmpty(pathSegment)) builder.Path = pathSegment;
             var httpClient = new HttpClient() { BaseAddress = builder.Uri };
             return RestService.For<T>(httpClient);

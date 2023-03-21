@@ -197,7 +197,7 @@ namespace StreamElements.Net
         }
         public override T BuildHttpClient<T>(string pathSegment = null)
         {
-            var builder = new UriBuilder("https://api.streamelements.com/kappa/v1");
+            var builder = new UriBuilder("https://api.streamelements.com/kappa/v2");
             if (!string.IsNullOrEmpty(pathSegment)) builder.Path = pathSegment;
             var httpClient = new HttpClient() { BaseAddress = builder.Uri };
             httpClient.DefaultRequestHeaders.Add("authorization", $"Bearer {this.JwtToken}");

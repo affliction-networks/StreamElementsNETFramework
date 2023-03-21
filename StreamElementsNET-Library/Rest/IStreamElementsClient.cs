@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Refit;
+using StreamElements.Net.Models;
 
 namespace StreamElements.Net.Rest
 {
@@ -11,8 +12,11 @@ namespace StreamElements.Net.Rest
 
          [Get("/chatstats/stats/{channel}")]
          Task<Models.ChatStats> GetChatStats(string channel);
-         
-         [Get("/loyalties/{channel}")]
-         Task<StreamElements.Net.Models.Results.LoyaltyResult> GetLoyalties(string channel);
+
+        [Get("/loyalties/{channel}")]
+        Task<StreamElements.Net.Models.Results.LoyaltyResult> GetLoyalties(string channel);
+
+        [Get("/tips/{channel}")]
+        Task<Tips> GetTips(string channel);
     }
 }
