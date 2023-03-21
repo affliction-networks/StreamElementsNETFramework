@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4E848873-367C-4892-BFA9-D4C6B14186A8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StreamElements.Net</RootNamespace>
+    <AssemblyName>StreamElements.Net</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthRestClient.cs" />
+    <Compile Include="Models\Activity.cs" />
+    <Compile Include="Models\Bot.cs" />
+    <Compile Include="Models\BotActionEnum.cs" />
+    <Compile Include="Models\BotCommand.cs" />
+    <Compile Include="Models\BotLevelEnum.cs" />
+    <Compile Include="Models\BotLevels.cs" />
+    <Compile Include="Models\BotLogs.cs" />
+    <Compile Include="Models\BotTimer.cs" />
+    <Compile Include="Models\ChatStats.cs" />
+    <Compile Include="Models\ChatStatsSettings.cs" />
+    <Compile Include="Models\Loyalties.cs" />
+    <Compile Include="Models\Loyalty.cs" />
+    <Compile Include="Models\Result.cs" />
+    <Compile Include="Models\Results\BotCommandResult.cs" />
+    <Compile Include="Models\Results\BotTimerResult.cs" />
+    <Compile Include="Models\Results\ChatStatsSettingsResult.cs" />
+    <Compile Include="Models\Results\IStreamElementsResult.cs" />
+    <Compile Include="Models\Results\LoyaltyResult.cs" />
+    <Compile Include="Models\SubmitBotLevelReponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestClient.cs" />
+    <Compile Include="Rest\IAuthenticatedStreamElementsApi.cs" />
+    <Compile Include="Rest\IGenericRestEndpoint.cs" />
+    <Compile Include="Rest\IStreamElementsClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Q">
+      <Version>1.4.1</Version>
+    </PackageReference>
+    <PackageReference Include="Refit">
+      <Version>6.3.2</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
